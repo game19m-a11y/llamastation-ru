@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="llamastation_icon.png" width="120" alt="LlamaStation logo"/>
+  <img src="llamastation_icon.png" width="120" alt="Логотип LlamaStation"/>
 </p>
 
 <h1 align="center">⚡ LlamaStation</h1>
-<p align="center"><b>AI Model Workstation — llama.cpp GUI for Windows</b></p>
+<p align="center"><b>Рабочая станция для моделей ИИ — графический интерфейс llama.cpp для Windows</b></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-v0.9-7c6af7?style=flat-square"/>
@@ -14,97 +14,99 @@
 </p>
 
 <p align="center">
-  A powerful, open-source GUI for running local AI models via llama.cpp — built for users who want full control over their hardware without the bloat.
+  Мощный графический интерфейс с открытым исходным кодом для запуска локальных моделей ИИ через llama.cpp — для тех, кто хочет полностью управлять своим оборудованием без лишней сложности.
 </p>
 
----
-
-## 🧑‍💻 Built by a non-programmer, with AI
-
-I built this because I didn't want to run llama.cpp from the command line every time I wanted to chat with a local model. I just wanted something simple that worked.
-
-**100% vibe coded** — I'm not a developer by trade. Every line of this app was written with AI assistance (Claude, mostly). If you're a programmer and something makes you cringe, please be kind — PRs are very welcome.
+> [English version](README-en.md). В этой версии русский перевод исходного кода ещё не завершён. Архив `LlamaStation.zip` содержит оригинальный EXE без перевода; переведённая сборка Windows пока не подготовлена.
 
 ---
 
-## Screenshots
+## 🧑‍💻 Создано не программистом с помощью ИИ
+
+Я создал это приложение, потому что не хотел запускать llama.cpp из командной строки каждый раз, когда хотелось пообщаться с локальной моделью. Хотелось чего-то простого, что просто работает.
+
+**На 100% создано методом вайб-кодинга** — я не профессиональный разработчик. Каждая строка этого приложения написана с помощью ИИ (в основном Claude). Если вы программист и что-то вызывает у вас ужас, пожалуйста, отнеситесь с пониманием — pull request'ы очень приветствуются.
+
+---
+
+## Скриншоты
 
 <table>
   <tr>
-    <td><img src="screenshot_dark.png" alt="Dark mode"/><br/><sub>Dark mode</sub></td>
-    <td><img src="screenshot_light.png" alt="Light mode"/><br/><sub>Light mode</sub></td>
+    <td><img src="screenshot_dark.png" alt="Тёмная тема"/><br/><sub>Тёмная тема</sub></td>
+    <td><img src="screenshot_light.png" alt="Светлая тема"/><br/><sub>Светлая тема</sub></td>
   </tr>
   <tr>
-    <td><img src="screenshot_vram.png" alt="VRAM meter"/><br/><sub>Real-time VRAM meter — dual GPU</sub></td>
-    <td><img src="screenshot_download.png" alt="Model downloader"/><br/><sub>Hugging Face model browser</sub></td>
+    <td><img src="screenshot_vram.png" alt="Индикатор видеопамяти"/><br/><sub>Мониторинг видеопамяти двух GPU в реальном времени</sub></td>
+    <td><img src="screenshot_download.png" alt="Загрузчик моделей"/><br/><sub>Обзор моделей Hugging Face</sub></td>
   </tr>
 </table>
 
 <p align="center">
-  <img src="screenshot_models.png" width="480" alt="Model browser"/><br/>
-  <sub>Local model browser with quantization info</sub>
+  <img src="screenshot_models.png" width="480" alt="Обзор моделей"/><br/>
+  <sub>Обзор локальных моделей с информацией о квантовании</sub>
 </p>
 
 ---
 
-## Why LlamaStation?
+## Почему LlamaStation?
 
-Most llama.cpp frontends sacrifice control for simplicity or the other way around. LlamaStation gives you both — a clean interface with full access to every parameter, designed for power users who want to get the most out of their hardware.
+Большинство интерфейсов для llama.cpp жертвуют управлением ради простоты или наоборот. LlamaStation предлагает и то и другое: понятный интерфейс с полным доступом ко всем параметрам для опытных пользователей, которые хотят максимально использовать своё оборудование.
 
-- **No telemetry. No accounts. No subscriptions.** 100% local, 100% yours.
-- Built specifically for **multi-GPU setups** with per-GPU VRAM monitoring
-- Supports both **official llama.cpp** and **TurboQuant fork** (asymmetric KV cache quantization)
-- **OpenAI-compatible API** — drop-in replacement for any app that uses OpenAI
+- **Без телеметрии, учётных записей и подписок.** Всё работает локально и принадлежит вам.
+- Разработана специально для **конфигураций с несколькими GPU**, с мониторингом видеопамяти каждой GPU.
+- Поддерживает как **официальную llama.cpp**, так и **форк TurboQuant** (асимметричное квантование KV-кэша).
+- **API, совместимый с OpenAI**, — замена для приложений, использующих OpenAI.
 
 ---
 
-## Features
+## Возможности
 
-### 🖥️ Interface
-- Dark / Light mode
-- English / Spanish UI (more languages easy to add)
-- Collapsible sidebars
-- Chat history with session management
-- **Thinking mode controls** — two independent toggles:
-  - **👁 Reasoning** — show/hide the reasoning block in the chat UI
-  - **🧠 Think ON / ⚡ Think OFF** — enable or disable model thinking entirely via `chat_template_kwargs`. Works for all connected clients (chat, OpenAI-compatible API, external agents). Automatically restarts the server when toggled. Compatible with TurboQuant fork.
-- **Web search & Deep Research** via a self-hosted SearXNG instance (multi-round research pipeline, no API key needed — see [Web Search Setup](#-web-search-setup-searxng) below)
-- Vision support — attach images to chat (multimodal models)
-- File attachment — send code files directly to the model
+### 🖥️ Интерфейс
+- Тёмная и светлая темы.
+- Русский и английский интерфейс. В этой версии русский перевод размещён в исходном блоке `es` и пока не завершён.
+- Сворачиваемые боковые панели.
+- История чатов с управлением диалогами.
+- **Управление режимом размышлений** — два независимых переключателя:
+  - **👁 Рассуждения** — показать или скрыть блок рассуждений в чате.
+  - **🧠 Think ON / ⚡ Think OFF** — полностью включить или отключить размышления модели через `chat_template_kwargs`. Действует для всех подключённых клиентов (чат, совместимый с OpenAI API, внешние агенты). При переключении сервер автоматически перезапускается. Совместимо с форком TurboQuant.
+- **Поиск в интернете и Deep Research** через собственный экземпляр SearXNG (многоэтапное исследование без ключа API — см. [настройку поиска](#-настройка-поиска-в-интернете-searxng) ниже).
+- Поддержка изображений — прикрепление к чату для мультимодальных моделей.
+- Прикрепление файлов — отправка файлов с кодом непосредственно модели.
 
-### 🎤 Voice Mode
-Talk to your local model out loud and have it talk back, fully offline.
-- **🎙 Push-to-talk** and **🔊 Always-listening** modes integrated directly into the main chat
-- **Voice cloning** via XTTS v2 — record 12 seconds of any voice (or import a clip) and the model will reply in that voice
-- **Speech recognition** powered by faster-whisper (tiny / base / small / medium / large-v3)
-- 14 languages supported (es, en, fr, de, it, pt, pl, nl, cs, ar, zh-cn, ja, hu, ko)
-- Adjustable speech speed (0.5x – 2.0x)
-- **CUDA or CPU** for XTTS — your choice
-- Voice replies **only** when you spoke — typed messages stay text-only, like ChatGPT voice mode
-- Automatic cleanup of `<think>` and `<|channel>` tags before TTS so the model never reads internal reasoning out loud
-- Optional auto-load of voice models at app startup
-- Dedicated **Voice tab** with full configuration and a separate test chat
+### 🎤 Голосовой режим
+Общайтесь с локальной моделью голосом и слушайте её ответы полностью без подключения к интернету.
+- Режимы **🎙 Push-to-talk** и **🔊 постоянного прослушивания**, встроенные в основной чат.
+- **Клонирование голоса** через XTTS v2 — запишите 12 секунд голоса или импортируйте запись, и модель будет отвечать этим голосом.
+- **Распознавание речи** с помощью faster-whisper (tiny / base / small / medium / large-v3).
+- Поддерживаются 14 языков (es, en, fr, de, it, pt, pl, nl, cs, ar, zh-cn, ja, hu, ko).
+- Регулируемая скорость речи (0,5×–2,0×).
+- XTTS может работать на **CUDA или CPU**.
+- Голосовой ответ воспроизводится **только** на голосовое сообщение — ответы на текстовые сообщения остаются текстовыми, как в голосовом режиме ChatGPT.
+- Теги `<think>` и `<|channel>` автоматически удаляются перед синтезом речи, чтобы внутренние рассуждения не зачитывались вслух.
+- Необязательная автоматическая загрузка голосовых моделей при запуске.
+- Отдельная вкладка **«Голос»** с настройками и тестовым чатом.
 
-### ⚙️ Model Management
-- Load any `.gguf` model with a full parameter modal
-- Per-model profile saving — settings remembered automatically
-- Auto-detection of mmproj files for vision models
-- Local model browser with quantization badges
-- Download models directly from Hugging Face with capability tags (Vision, Tools, Thinking, Code...)
+### ⚙️ Управление моделями
+- Загрузка любой модели `.gguf` с полным набором параметров в диалоговом окне.
+- Автоматическое сохранение профиля и настроек для каждой модели.
+- Автоматическое обнаружение файлов mmproj для моделей с поддержкой изображений.
+- Обзор локальных моделей с обозначениями квантования.
+- Загрузка моделей напрямую с Hugging Face с метками возможностей (Vision, Tools, Thinking, Code и т. д.).
 
-### 🔧 Server Control
-- Start / stop llama.cpp server with one click
-- **Real-time VRAM meter** for each GPU — color coded (green/yellow/red)
-- Multi-GPU support: layer split, row split, tensor split ratio
-- Continuous batching, Flash Attention, KV cache offload
-- Asymmetric KV cache (different types for K and V — TurboQuant)
-- Auto-update llama.cpp from GitHub
-- **🛡️ Server Watchdog** — detects unexpected crashes (OOM, etc.) and optionally auto-relaunches the server after 5 seconds. Configurable via toggle in the Server tab.
-- **🧹 Backup cleanup** — each llama.cpp update creates a backup of the previous installation. The Server tab shows total backup size and lets you delete them all at once.
+### 🔧 Управление сервером
+- Запуск и остановка сервера llama.cpp одним нажатием.
+- **Мониторинг видеопамяти каждой GPU в реальном времени** с цветовой индикацией (зелёный, жёлтый, красный).
+- Поддержка нескольких GPU: распределение по слоям или строкам и соотношение распределения тензоров.
+- Непрерывная пакетная обработка, Flash Attention и перенос KV-кэша на GPU.
+- Асимметричный KV-кэш (разные типы для K и V — TurboQuant).
+- Автоматическое обновление llama.cpp с GitHub.
+- **🛡️ Мониторинг сервера** — обнаружение неожиданных сбоев (например, нехватки памяти) и необязательный автоматический перезапуск через 5 секунд. Настраивается переключателем на вкладке «Сервер».
+- **🧹 Очистка резервных копий** — при каждом обновлении llama.cpp создаётся копия предыдущей установки. На вкладке «Сервер» можно посмотреть общий размер копий и удалить их все сразу.
 
-### 📡 API & Headless
-- Built-in API Docs tab with copy-ready curl and Python examples
-- **Headless mode** — run without GUI, uses saved model profiles:
+### 📡 API и режим без интерфейса
+- Встроенная вкладка документации API с готовыми примерами curl и Python.
+- **Режим без графического интерфейса** использует сохранённые профили моделей:
 
 ```bash
 # Interactive model selector
@@ -114,103 +116,109 @@ python llamastation.py --no-gui
 python llamastation.py --no-gui --model C:\models\qwen3.gguf --port 8080
 ```
 
+Первая команда открывает интерактивный выбор модели, вторая запускает указанную модель напрямую.
+
 ---
 
-## Requirements
+## Требования
 
-- Windows 10/11
-- Python 3.11+
-- [llama.cpp](https://github.com/ggerganov/llama.cpp) compiled for your hardware (CUDA, Vulkan, CPU)
-- NVIDIA GPU recommended (AMD/Intel via Vulkan also supported)
+- Windows 10/11.
+- Python 3.11+.
+- [llama.cpp](https://github.com/ggerganov/llama.cpp), собранная для вашего оборудования (CUDA, Vulkan, CPU).
+- Рекомендуется GPU NVIDIA (также поддерживаются AMD/Intel через Vulkan).
 
 ```bash
 pip install customtkinter requests Pillow
 ```
 
-**Optional — for Voice Mode:**
+**Необязательно — для голосового режима:**
 
 ```bash
 pip install coqui-tts faster-whisper sounddevice soundfile scipy pydub
 ```
 
-> **What gets downloaded:** The first time you click **Load models** in the Voice tab, XTTS v2 (~1.8 GB) and the selected Whisper model (tiny ~75 MB / base ~145 MB / small ~465 MB) are downloaded automatically to your HuggingFace cache. This only happens once.
+> **Что загружается:** при первом нажатии **«Загрузить модели»** на вкладке «Голос» XTTS v2 (~1,8 ГБ) и выбранная модель Whisper (tiny ~75 МБ / base ~145 МБ / small ~465 МБ) автоматически загружаются в кэш Hugging Face. Это происходит только один раз.
 
-**For CUDA acceleration on XTTS** (recommended if you have an NVIDIA GPU — significantly faster TTS):
+**Для ускорения XTTS с помощью CUDA** (рекомендуется для GPU NVIDIA — синтез речи будет значительно быстрее):
 
 ```bash
 # Requires torch 2.1.x with cuDNN 8 — do NOT use a newer torch version
 pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
 ```
 
-> **⚠️ CUDA fix for Windows — `cudnn64_8.dll not found`:** If XTTS crashes on load with a cuDNN error, install the cuDNN wheel:
+Требуется torch 2.1.x с cuDNN 8 — не используйте более новую версию torch.
+
+> **⚠️ Исправление CUDA в Windows — `cudnn64_8.dll not found`:** если XTTS завершает работу при загрузке из-за ошибки cuDNN, установите пакет cuDNN:
 > ```bash
 > pip install nvidia-cudnn-cu11
 > ```
-> LlamaStation adds it to the DLL search path automatically — no manual PATH editing needed.
+> LlamaStation автоматически добавит его в путь поиска DLL — вручную изменять PATH не нужно.
 
-Speech recognition (faster-whisper) always runs on **CPU** so it doesn't compete with your GPU during LLM inference. XTTS can run on CPU or CUDA — selectable in the Voice tab.
-
----
-
-## Installation
-
-**Option A — Pre-built .exe *(recommended if you just want to run it)***
-
-No Python required. No command line. Just download and run.
-
-1. Go to the [Releases](../../releases) page and download the latest `LlamaStation-vX.X.zip`
-2. **Extract the entire folder** somewhere permanent (e.g. `C:\LlamaStation\`) — don't just extract the `.exe`, the whole folder is needed
-3. Open the extracted folder and double-click **`LlamaStation.exe`**
-4. On first launch, click **⬆ Update / Download backend** in the sidebar — this downloads and installs llama.cpp automatically (only needed once)
-5. Click **Download models**, search for a model, download it, and you're ready to chat
-
-> ⚠️ **Windows SmartScreen** may show a warning the first time — this is normal for any unsigned app. Click **"More info"** → **"Run anyway"**. The entire source code is open and auditable right here on GitHub — every single line. If you still want extra peace of mind, feel free to [scan the .exe on VirusTotal](https://www.virustotal.com) before running it.
-
-> 💡 **Voice Mode is not included** in the `.exe` release — it requires PyTorch and XTTS (~3 GB of dependencies). If you want voice, use Option B below.
+Распознавание речи (faster-whisper) всегда работает на **CPU**, чтобы не конкурировать с GPU во время инференса LLM. XTTS может работать на CPU или CUDA; устройство выбирается на вкладке «Голос».
 
 ---
 
-**Option B — Run from source**
+## Установка
 
-1. Download the repo — click the green **Code** button → **Download ZIP**, extract it wherever you want
-   *(or `git clone https://github.com/vico-png/llamastation` if you know git)*
-2. Open the extracted folder and double-click **`iniciar_llamastation.bat`**
-3. The first time it will install all dependencies automatically — this takes a few minutes, just wait
-4. LlamaStation will launch automatically when it's done
-5. Next time, just double-click the same `.bat` file to launch
+**Вариант A — готовый EXE *(если вы просто хотите запустить приложение)***
 
-> ⚠️ **Python 3.11 is required.** If the .bat shows an error about Python not found, download and install it from [python.org](https://www.python.org/downloads/) first.
+Python и командная строка не требуются. Достаточно скачать и запустить приложение.
 
-> ⏳ **First launch takes a while** — the .bat installs all dependencies including voice mode (XTTS v2, Whisper, torch). This only happens once and can take 5-10 minutes depending on your connection. Subsequent launches are instant.
+> Готовый EXE в текущем `LlamaStation.zip` — оригинальная сборка и не включает изменения русского перевода из исходников.
 
----
+1. Откройте страницу [Releases](../../releases) и скачайте последнюю версию `LlamaStation-vX.X.zip`.
+2. **Распакуйте всю папку** в постоянное место (например, `C:\LlamaStation\`) — одного файла `.exe` недостаточно.
+3. Откройте распакованную папку и дважды нажмите **`LlamaStation.exe`**.
+4. При первом запуске нажмите **⬆ Update / Download backend** на боковой панели — llama.cpp будет загружена и установлена автоматически. Это нужно сделать только один раз.
+5. Нажмите **Download models**, найдите и скачайте модель — после этого можно общаться.
 
-## Quick Start
+> ⚠️ При первом запуске **Windows SmartScreen** может показать предупреждение — это обычная ситуация для неподписанного приложения. Нажмите **«Подробнее»** → **«Выполнить в любом случае»**. Весь исходный код доступен для проверки на GitHub. Для дополнительной уверенности можно [проверить EXE через VirusTotal](https://www.virustotal.com) перед запуском.
 
-1. Launch LlamaStation
-2. Click the **⬆ Update / Download backend** button at the bottom of the left sidebar — this downloads and installs the inference engine automatically (only needed once)
-3. Click **Download models** → search for a model (e.g. `gemma-4`) → download it
-4. Click **My models** → select your `.gguf` file → configure and load
-5. Hit **▶ Start server** — the VRAM bars will fill up as the model loads
-6. Start chatting
+> 💡 **Голосовой режим не входит** в выпуск `.exe`: ему нужны PyTorch и XTTS (около 3 ГБ зависимостей). Для голосового режима используйте вариант B.
 
 ---
 
-## Multi-GPU Setup (2x RTX 3060, etc.)
+**Вариант B — запуск из исходного кода**
 
-LlamaStation has first-class multi-GPU support. In the model load dialog:
+1. Скачайте репозиторий: нажмите зелёную кнопку **Code** → **Download ZIP** и распакуйте архив в удобное место.
+   *(Или выполните `git clone https://github.com/game19m-a11y/llamastation-ru`, если знакомы с git.)*
+2. Откройте распакованную папку и дважды нажмите **`iniciar_llamastation.bat`**.
+3. При первом запуске зависимости установятся автоматически — это займёт несколько минут.
+4. После завершения LlamaStation запустится автоматически.
+5. При следующих запусках достаточно дважды нажать тот же файл `.bat`.
 
-- **Split Mode**: `layer` (recommended) splits the model evenly across GPUs by layers
-- **Tensor Split**: set a ratio like `1,1` for 50/50 or `3,1` for 75/25
-- Watch the **VRAM meter** in real time to verify the split is working
+> ⚠️ **Требуется Python 3.11.** Если `.bat` сообщает, что Python не найден, сначала скачайте и установите его с [python.org](https://www.python.org/downloads/).
+
+> ⏳ **Первый запуск занимает время:** `.bat` устанавливает все зависимости, включая голосовой режим (XTTS v2, Whisper, torch). Это происходит один раз и может занять 5–10 минут в зависимости от соединения. Последующие запуски происходят сразу.
 
 ---
 
-## 🔍 Web Search Setup (SearXNG)
+## Быстрый старт
 
-LlamaStation's **Web search** and **🔬 Deep Research** modes query a self-hosted [SearXNG](https://github.com/searxng/searxng) instance instead of relying on a third-party API. This keeps search fully local/private and avoids API keys or rate limits. You need a running SearXNG container with **JSON output enabled** before these features will work.
+1. Запустите LlamaStation.
+2. Нажмите **⬆ Обновить / скачать бэкенд** внизу левой боковой панели — движок инференса будет загружен и установлен автоматически. Это нужно сделать один раз.
+3. Нажмите **Скачать модели** → найдите модель (например, `gemma-4`) → скачайте её.
+4. Нажмите **Мои модели** → выберите файл `.gguf` → настройте и загрузите модель.
+5. Нажмите **▶ Запустить сервер** — индикаторы видеопамяти будут заполняться при загрузке модели.
+6. Начните общение.
 
-### 1. Run SearXNG with Docker
+---
+
+## Настройка нескольких GPU (2× RTX 3060 и т. д.)
+
+LlamaStation поддерживает работу с несколькими GPU. В окне загрузки модели:
+
+- **Split Mode**: `layer` (рекомендуется) распределяет слои модели между GPU.
+- **Tensor Split**: задайте соотношение, например `1,1` для 50/50 или `3,1` для 75/25.
+- Следите за **индикатором видеопамяти** в реальном времени, чтобы проверить распределение.
+
+---
+
+## 🔍 Настройка поиска в интернете (SearXNG)
+
+Режимы **поиска в интернете** и **🔬 Deep Research** используют собственный экземпляр [SearXNG](https://github.com/searxng/searxng) вместо стороннего API. Это сохраняет локальность и приватность поиска и позволяет обходиться без API-ключей и ограничений частоты запросов. Для работы необходим запущенный контейнер SearXNG с **включённым выводом JSON**.
+
+### 1. Запустите SearXNG в Docker
 
 ```bash
 docker run -d \
@@ -221,7 +229,7 @@ docker run -d \
   searxng/searxng:latest
 ```
 
-Or with `docker-compose`:
+Или используйте `docker-compose`:
 
 ```yaml
 services:
@@ -237,9 +245,9 @@ services:
     restart: unless-stopped
 ```
 
-### 2. Enable JSON format
+### 2. Включите формат JSON
 
-By default SearXNG only serves HTML. LlamaStation needs the JSON API, so edit the generated `searxng/settings.yml` (created after the first run) and make sure `json` is listed under `search.formats`:
+По умолчанию SearXNG отдаёт только HTML. LlamaStation нужен JSON API, поэтому откройте созданный после первого запуска файл `searxng/settings.yml` и убедитесь, что `json` указан в `search.formats`:
 
 ```yaml
 search:
@@ -248,39 +256,39 @@ search:
     - json
 ```
 
-Restart the container after saving:
+После сохранения перезапустите контейнер:
 
 ```bash
 docker restart searxng
 ```
 
-### 3. Point LlamaStation to your instance
+### 3. Укажите экземпляр SearXNG в LlamaStation
 
-In the **Server** tab, set the **SearXNG URL** field to `http://localhost:8888` (default). If SearXNG is running on another machine or a different port, update the URL accordingly. Once set, both the **🔬 Deep** toggle in chat and the regular web search button will use it automatically.
+На вкладке **«Сервер»** установите в поле **SearXNG URL** значение `http://localhost:8888` (по умолчанию). Если SearXNG работает на другом компьютере или порту, измените URL соответствующим образом. После этого переключатель **🔬 Deep** и кнопка обычного поиска в чате будут использовать его автоматически.
 
-> 💡 Deep Research mode runs multiple rounds of SearXNG queries (reformulating the search based on prior results) before summarizing, so expect it to take noticeably longer than a single web search.
+> 💡 Deep Research выполняет несколько раундов запросов к SearXNG, уточняя поиск по предыдущим результатам, прежде чем составить итог. Поэтому он заметно медленнее одиночного поиска.
 
-### 4. Telegram bot integration
+### 4. Интеграция с ботом Telegram
 
-The Telegram bridge (`llamastation_telegram.py`) reuses the same SearXNG instance for web search inside chats, so no separate setup is needed — just make sure SearXNG is running before starting the bot.
+Мост Telegram (`llamastation_telegram.py`) использует тот же экземпляр SearXNG для поиска в чатах, поэтому отдельная настройка не нужна — убедитесь лишь, что SearXNG запущен до старта бота.
 
-- Set the same `SEARXNG_URL` (default `http://localhost:8888`) in the bot's config so it can reach the container.
-- Web search is triggered automatically when the model decides a query needs current information, or manually via the bot's search command.
-- If SearXNG is unreachable, the bot falls back to DuckDuckGo so search still works, just without the SearXNG-specific features (JSON parsing, multi-round research).
-- Run the bot on the same host/network as the SearXNG container (or make sure the port is reachable) — if you're using Docker networks, use the container name (e.g. `http://searxng:8080`) instead of `localhost`.
+- Укажите тот же `SEARXNG_URL` (по умолчанию `http://localhost:8888`) в конфигурации бота, чтобы он мог подключиться к контейнеру.
+- Поиск запускается автоматически, когда модель решает, что запросу нужна актуальная информация, или вручную через команду поиска бота.
+- Если SearXNG недоступен, бот переключается на DuckDuckGo: поиск продолжит работать, но без возможностей SearXNG, таких как обработка JSON и многоэтапное исследование.
+- Запускайте бота на том же хосте или в той же сети, что и контейнер SearXNG, либо убедитесь, что порт доступен. В сетях Docker используйте имя контейнера (например, `http://searxng:8080`) вместо `localhost`.
 
 ---
 
-## Supported Backends
+## Поддерживаемые бэкенды
 
-| Backend | Description |
+| Бэкенд | Описание |
 |---|---|
-| ⚡ Official llama.cpp | Standard build — CUDA, Vulkan, CPU. Supports **MTP** natively since May 2026 |
-| 🔬 TurboQuant (TheTom fork) | Asymmetric KV cache quantization — run 200k+ context on 24GB VRAM |
-| ⚛️ AtomicChat (TurboQuant + MTP) | TurboQuant + MTP combined — ~22 tok/s on dual RTX 3060 with 177k context |
-| 🐝 BeeLlama (DFlash + TurboQuant) | DFlash speculative decoding with TurboQuant — experimental |
+| ⚡ Официальный llama.cpp | Стандартная сборка — CUDA, Vulkan, CPU. Нативно поддерживает **MTP** с мая 2026 года |
+| 🔬 TurboQuant (форк TheTom) | Асимметричное квантование KV-кэша — контекст более 200 тыс. токенов на 24 ГБ видеопамяти |
+| ⚛️ AtomicChat (TurboQuant + MTP) | Сочетание TurboQuant и MTP — около 22 токенов/с на двух RTX 3060 с контекстом 177 тыс. токенов |
+| 🐝 BeeLlama (DFlash + TurboQuant) | Спекулятивное декодирование DFlash с TurboQuant — экспериментально |
 
-**Adding your own fork** is two lines of code — edit the `BACKENDS` dict in `llamastation.py` and point it to your `llama-server.exe`. Any fork that compiles from llama.cpp works out of the box.
+**Добавить свой форк** можно двумя строками кода: измените словарь `BACKENDS` в `llamastation.py`, указав путь к вашему `llama-server.exe`. Подходит любой форк, собираемый из llama.cpp.
 
 ```python
 BACKENDS = {
@@ -290,13 +298,11 @@ BACKENDS = {
 }
 ```
 
-
-
 ---
 
-## API Usage
+## Использование API
 
-LlamaStation exposes an OpenAI-compatible API at `http://localhost:8080/v1`. Any app that supports OpenAI works out of the box:
+LlamaStation предоставляет совместимый с OpenAI API по адресу `http://localhost:8080/v1`. Любое приложение с поддержкой OpenAI может работать с ним без дополнительной настройки:
 
 ```python
 from openai import OpenAI
@@ -309,11 +315,11 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-See the **API Docs** tab inside the app for more examples.
+Другие примеры приведены на вкладке **документации API** в приложении.
 
 ---
 
-## File Structure
+## Структура файлов
 
 ```
 llamastation/
@@ -327,45 +333,47 @@ llamastation/
 └── llamastation_settings.json  # App settings (auto-generated)
 ```
 
----
-
-## Adding a Language
-
-Open `llamastation_i18n.py`, copy the `"en"` block, rename it to your language code (e.g. `"fr"`), translate the values, and open a PR. That's it — no other files need to change.
+Основное приложение находится в `llamastation.py`; рядом расположены загрузчик моделей, голосовой модуль, переводы, значок и файл запуска для Windows. Файлы профилей и настроек создаются автоматически.
 
 ---
 
-## Contributing
+## Добавление языка
 
-PRs welcome. The codebase is intentionally kept in a small number of files to make it easy to understand and modify. If you add features, please update both `"es"` and `"en"` blocks in `llamastation_i18n.py`.
+Откройте `llamastation_i18n.py`, скопируйте блок `"en"`, переименуйте его в код нужного языка (например, `"fr"`), переведите значения и откройте pull request. Согласно документации исходного проекта, другие файлы менять не нужно.
 
 ---
 
-## Credits & Third-party licenses
+## Участие в разработке
 
-LlamaStation is a GUI frontend. The actual inference is powered by these open-source projects:
+Pull request'ы приветствуются. Код намеренно размещён в небольшом количестве файлов, чтобы его было проще понимать и изменять. При добавлении возможностей обновляйте блоки `"es"` и `"en"` в `llamastation_i18n.py`; в этом репозитории блок `"es"` содержит русский перевод.
 
-| Project | Author | License | What it does |
+---
+
+## Авторы и лицензии сторонних компонентов
+
+LlamaStation — графический интерфейс. Сам инференс обеспечивается следующими проектами с открытым исходным кодом:
+
+| Проект | Автор | Лицензия | Назначение |
 |---|---|---|---|
-| [llama.cpp](https://github.com/ggml-org/llama.cpp) | Georgi Gerganov / ggml-org | MIT | Core LLM inference engine (official backend) |
-| [llama-cpp-turboquant](https://github.com/TheTom/llama-cpp-turboquant) | TheTom | MIT | llama.cpp fork with TurboQuant KV cache compression (turbo2/3/4) |
-| [atomic-llama-cpp-turboquant](https://github.com/AtomicBot-ai/atomic-llama-cpp-turboquant) | AtomicBot-ai | MIT | llama.cpp fork with TurboQuant + MTP |
-| [coqui-tts (XTTS v2)](https://github.com/coqui-ai/TTS) | Coqui | CPML | Voice cloning and text-to-speech for the Voice tab |
-| [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | SYSTRAN | MIT | Fast speech-to-text using CTranslate2 |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp) | Georgi Gerganov / ggml-org | MIT | Основной движок инференса LLM (официальный бэкенд) |
+| [llama-cpp-turboquant](https://github.com/TheTom/llama-cpp-turboquant) | TheTom | MIT | Форк llama.cpp со сжатием KV-кэша TurboQuant (turbo2/3/4) |
+| [atomic-llama-cpp-turboquant](https://github.com/AtomicBot-ai/atomic-llama-cpp-turboquant) | AtomicBot-ai | MIT | Форк llama.cpp с TurboQuant и MTP |
+| [coqui-tts (XTTS v2)](https://github.com/coqui-ai/TTS) | Coqui | CPML | Клонирование голоса и синтез речи на вкладке «Голос» |
+| [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | SYSTRAN | MIT | Быстрое распознавание речи с помощью CTranslate2 |
 
-TurboQuant is based on the paper [TurboQuant (arXiv:2504.19874, ICLR 2026)](https://arxiv.org/abs/2504.19874) by Zirlin et al.
+TurboQuant основан на статье [TurboQuant (arXiv:2504.19874, ICLR 2026)](https://arxiv.org/abs/2504.19874) Zirlin и соавторов.
 
-Both backends are MIT licensed — `Copyright © 2023-2026 The ggml authors`. Full license text is included in the **⚖️ Acerca de** tab inside the app.
+Оба бэкенда распространяются по лицензии MIT — `Copyright © 2023-2026 The ggml authors`. Полный текст лицензии находится на вкладке **⚖️ О программе** внутри приложения.
 
 ---
 
-## License
+## Лицензия
 
-MIT — do whatever you want with it.
+MIT — используйте как хотите.
 
 ---
 
 <p align="center">
-  Made with ❤️ for the local AI community<br/>
-  <sub>Not affiliated with any AI company</sub>
+  Сделано с ❤️ для сообщества локального ИИ<br/>
+  <sub>Не связано ни с одной компанией, работающей в области ИИ</sub>
 </p>
