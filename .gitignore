@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Datos personales generados por la app
+llamaforge_profiles.json
+llamaforge_settings.json
+llamaforge_sessions.json
+llamastation_sessions.json
+
+# Logs y debug
+*.log
+error_log.txt
+crash.log
+debug_launch.py
+
+# Iconos viejos
+llamaforge_icon.ico
+llamaforge_icon.png
+
+# Windows
+Thumbs.db
+desktop.ini
